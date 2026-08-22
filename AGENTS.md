@@ -4,16 +4,15 @@
 Coding Project Ideas Recommender — suggests coding project ideas to users (e.g. based on skill level, interests, or time available). This is a fresh repository with no established stack yet.
 
 ## Stack
-Not yet decided. If this is the first task in the repo, propose a stack in your plan before writing code, and briefly note why. Prefer widely-supported, low-dependency choices over exotic ones unless the task specifically calls for something else. Once a stack is chosen and committed, treat it as fixed — do not silently switch languages or frameworks in a later task.
+Plain static HTML/CSS — `index.html`, `style.css`, `favicon.svg` at the repo root. No build step, no dependencies. Chosen because the site is a simple one-pager: zero-build static files are the fastest-loading and most widely-supported option, and deploy to Vercel as-is ("Other" framework preset). Treat this as fixed — do not introduce a framework or build tooling without flagging it as a significant change first.
 
 ## Recommendation Logic
 Not yet decided — could be a static/curated list, a rules-based filter, or an LLM-call-based generator. If a task requires you to make this decision, state the tradeoff briefly (e.g. "static list = simple, no ongoing cost, less variety" vs "LLM-based = more variety, requires an API key and has runtime cost") and pick one rather than partially implementing both.
 
 ## Run & Test
-Once a stack is established, this section should be updated with the actual install/run/test commands. Until then:
-- Set up the project so it can be run with a single documented command.
-- Add tests as functionality is added — do not leave a task "done" without at least a basic smoke test that the feature works.
-- Before considering any task complete, run whatever test suite exists.
+- Run locally: `python3 -m http.server 8000` from the repo root (any static file server works).
+- Deploy: import the repo in Vercel with the default "Other" preset — no build command needed.
+- Test: serve the site and smoke-test that `/`, `/style.css`, and `/favicon.svg` return 200, the HTML parses without unclosed tags, and every `href` on the page resolves. There is no automated test suite; do not leave a task "done" without at least this smoke test.
 
 ## Conventions
 - Keep functions and files small and single-purpose.
