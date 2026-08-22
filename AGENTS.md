@@ -4,7 +4,7 @@
 Coding Project Ideas Recommender — suggests coding project ideas to users (e.g. based on skill level, interests, or time available). This is a fresh repository with no established stack yet.
 
 ## Stack
-Plain static HTML/CSS — `index.html`, `style.css`, `favicon.svg` at the repo root. No build step, no dependencies. Chosen because the site is a simple one-pager: zero-build static files are the fastest-loading and most widely-supported option, and deploy to Vercel as-is ("Other" framework preset). Treat this as fixed — do not introduce a framework or build tooling without flagging it as a significant change first.
+Next.js 15 (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui (Base UI registry). npm for dependencies. Light/dark theming via next-themes with shadcn design tokens defined in `app/globals.css`; favicon lives at `app/icon.svg`. The site is a static one-pager composed of small section components under `components/`. Migrated from the original zero-build static HTML/CSS per explicit user request — do not revert to static HTML or introduce a different framework without flagging it as a significant change first.
 
 ## Recommendation Logic
 Not yet decided — could be a static/curated list, a rules-based filter, or an LLM-call-based generator. If a task requires you to make this decision, state the tradeoff briefly (e.g. "static list = simple, no ongoing cost, less variety" vs "LLM-based = more variety, requires an API key and has runtime cost") and pick one rather than partially implementing both.
@@ -19,9 +19,10 @@ UI Framework & Design Direction:
 - Avoid: Plain unstyled pages, generic Bootstrap-style layouts, or minimal default styling.
 
 ## Run & Test
-- Run locally: `python3 -m http.server 8000` from the repo root (any static file server works).
-- Deploy: import the repo in Vercel with the default "Other" preset — no build command needed.
-- Test: serve the site and smoke-test that `/`, `/style.css`, and `/favicon.svg` return 200, the HTML parses without unclosed tags, and every `href` on the page resolves. There is no automated test suite; do not leave a task "done" without at least this smoke test.
+- Run locally: `npm install && npm run dev` from the repo root, open http://localhost:3000.
+- Production build: `npm run build`, serve with `npm start`.
+- Deploy: import the repo in Vercel — the Next.js framework preset is detected automatically.
+- Test: `npm run build` must compile (it runs ESLint + type checks), then serve the production build and smoke-test that `/` returns 200, the HTML parses without unclosed tags, and every `href` on the page resolves. There is no automated test suite; do not leave a task "done" without at least this smoke test.
 
 ## Conventions
 - Keep functions and files small and single-purpose.
