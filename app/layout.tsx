@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "Pheelip Sim — AI Educator & Enterprise AI Practitioner",
   description:
     "Pheelip Sim is an AI educator and enterprise AI practitioner based in Singapore, helping organizations and students navigate applied AI.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

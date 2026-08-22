@@ -1,6 +1,6 @@
 import { ArrowDown, Mail, MapPin } from "lucide-react";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -13,8 +13,9 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(45rem_30rem_at_top,var(--color-primary)/10%,transparent)]"
       />
       <div className="flex flex-col items-start gap-6 py-20 sm:py-28">
-        <Avatar className="size-16 border border-border shadow-sm">
-          <AvatarFallback className="bg-primary text-lg font-bold text-primary-foreground">
+        <Avatar className="size-20 border-2 border-border shadow-md">
+          <AvatarImage src="/profile.jpg" alt="Pheelip Sim" />
+          <AvatarFallback className="bg-primary text-xl font-bold text-primary-foreground">
             PS
           </AvatarFallback>
         </Avatar>
@@ -22,18 +23,27 @@ export function HeroSection() {
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             Pheelip Sim
           </h1>
-          <p className="max-w-xl text-lg text-muted-foreground">
-            AI Educator &amp; Enterprise AI Practitioner — helping organizations
-            and students navigate applied AI.
+          <p className="text-xl font-medium text-foreground/80">
+            AI Educator &amp; Enterprise AI Practitioner
+          </p>
+          <p className="max-w-xl text-base text-muted-foreground">
+            I help organizations and students navigate applied AI — from
+            enterprise AI implementation to teaching the next generation how to
+            build with it.
           </p>
         </div>
-        <Badge
-          variant="secondary"
-          className="gap-1.5 font-normal text-muted-foreground"
-        >
-          <MapPin className="size-3" />
-          Singapore
-        </Badge>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge
+            variant="secondary"
+            className="gap-1.5 font-normal text-muted-foreground"
+          >
+            <MapPin className="size-3" />
+            Singapore
+          </Badge>
+          <Badge variant="outline" className="font-normal">
+            25+ years in tech
+          </Badge>
+        </div>
         <div className="flex flex-wrap items-center gap-3 pt-2">
           <a
             href="mailto:pheeliptwin@gmail.com"

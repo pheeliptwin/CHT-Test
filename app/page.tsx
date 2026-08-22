@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/hero-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Separator } from "@/components/ui/separator";
+import { VolunteeringSection } from "@/components/volunteering-section";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <div className="space-y-16 py-16">
           <AboutSection />
           <ExperienceSection />
+          <VolunteeringSection />
           <FocusSection />
           <ContactSection />
         </div>
