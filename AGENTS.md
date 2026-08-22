@@ -9,6 +9,15 @@ Plain static HTML/CSS — `index.html`, `style.css`, `favicon.svg` at the repo r
 ## Recommendation Logic
 Not yet decided — could be a static/curated list, a rules-based filter, or an LLM-call-based generator. If a task requires you to make this decision, state the tradeoff briefly (e.g. "static list = simple, no ongoing cost, less variety" vs "LLM-based = more variety, requires an API key and has runtime cost") and pick one rather than partially implementing both.
 
+## UI
+UI Framework & Design Direction:
+- Tech stack for UI: Next.js 15 (App Router) + TypeScript + Tailwind CSS + shadcn/ui
+- Design quality bar: Production-grade, modern SaaS aesthetic (comparable to Linear or Vercel)
+- Design system: Use shadcn/ui components consistently. Create a cohesive theme with a carefully chosen color palette, typography scale, and spacing system.
+- Visual style: Clean, refined, slightly premium. Good contrast, excellent readability, subtle animations where they improve UX.
+- Responsive: Mobile-first, looks excellent on all screen sizes.
+- Avoid: Plain unstyled pages, generic Bootstrap-style layouts, or minimal default styling.
+
 ## Run & Test
 - Run locally: `python3 -m http.server 8000` from the repo root (any static file server works).
 - Deploy: import the repo in Vercel with the default "Other" preset — no build command needed.
