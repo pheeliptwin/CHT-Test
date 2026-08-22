@@ -3,10 +3,13 @@ import { SectionHeading } from "@/components/section-heading";
 
 const focusAreas = [
   "Enterprise AI strategy",
+  "DevOps / SRE",
+  "AIOps & observability",
   "Prompt engineering",
   "Agentic systems",
   "AI education & curriculum design",
   "Admissions consulting",
+  "Youth career development",
 ];
 
 export function FocusSection() {
